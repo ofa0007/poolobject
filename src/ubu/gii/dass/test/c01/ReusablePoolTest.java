@@ -9,8 +9,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.DuplicatedInstanceException;
 import ubu.gii.dass.c01.NotFreeInstanceException;
 import ubu.gii.dass.c01.ReusablePool;
+import ubu.gii.dass.c01.Reusable;
 
 /**
  * @author alumno
@@ -73,10 +75,31 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for
 	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
+	 * 
+	 * Descripcion: Comprobamos que releaseReusable funciona y que no se puede liberar un recurso ya liberado.
+	 * Entrada: getInstance y acquireReusable tienen que funcionar.
+	 * Salida: releaseReusable tiene que funcionar una vez y a la segunda con el mismo reusable lanzar una excepcion.
 	 */
 	@Test
 	public void testReleaseReusable() {
-		fail("Not yet implemented");
+		boolean excep = false;
+		boolean release = false;
+		ReusablePool rp = ReusablePool.getInstance();
+		Reusable r = null;
+		try {
+			r = rp.acquireReusable();
+		} catch (NotFreeInstanceException e) {
+			assertTrue(false);
+		}
+		try {
+			rp.releaseReusable(r);
+			release = true;
+			rp.releaseReusable(r);
+		} catch (DuplicatedInstanceException e) {
+			excep = true;			
+		}
+		assertTrue(release);
+		assertTrue(excep);
 	}
 
 }
