@@ -34,6 +34,10 @@ public class ReusablePoolTest {
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#getInstance()}.
+	 * 
+	 * Descripcion: Comprobamos que getInstance nos devuelva una instancia y que sea la misma si lo llamamos varias veces
+	 * Entrada: No hay
+	 * Salida: Una instancia no nula y que sea igual entre llamadas.
 	 */
 	@Test
 	public void testGetInstance() {
