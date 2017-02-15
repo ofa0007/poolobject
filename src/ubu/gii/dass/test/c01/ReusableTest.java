@@ -19,7 +19,7 @@ public class ReusableTest {
 	@Test
 	public void utilTest() {
 		Reusable re = new Reusable();
-		assertTrue(re.util().contains("  :Uso del objeto Reutilizable"));
+		assertTrue(re.util().contains(":Uso del objeto Reutilizable"));
 	}
 
 }

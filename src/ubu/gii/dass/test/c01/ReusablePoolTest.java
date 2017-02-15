@@ -37,7 +37,8 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#getInstance()}.
 	 * 
-	 * Descripcion: Comprobamos que getInstance nos devuelva una instancia y que sea la misma si lo llamamos varias veces
+	 * Descripcion: Comprobamos que getInstance nos devuelva una instancia y que sea 
+	 * 	la misma si lo llamamos varias veces
 	 * Entrada: No hay
 	 * Salida: Una instancia no nula y que sea igual entre llamadas.
 	 */
@@ -51,9 +52,11 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
 	 * 
-	 * Descripcion: comprobamos que haya objetos reusables y comprobamos que cuando no haya salte la excepcion.
+	 * Descripcion: comprobamos que haya objetos reusables y comprobamos que cuando no
+	 *  haya salte la excepcion.
 	 * datos entrada: instance ReusablePool.
-	 * datos salida: comprobamos que haya al menos un reusable y comprobamos que salte la excepcion.
+	 * datos salida: comprobamos que haya al menos un reusable y comprobamos que 
+	 * 	salte la excepcion.
 	 */
 	@Test
 	public void testAcquireReusable() {
