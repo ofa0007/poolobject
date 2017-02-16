@@ -64,7 +64,7 @@ public class ReusablePoolTest {
 		boolean reusable = false;
 		boolean emptyPool = false;
 		try {
-			while (true) {
+			for (int i = 0; i < 3; i++) {
 				assertTrue(rp.acquireReusable() != null);
 				reusable = true;
 			}
